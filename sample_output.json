@@ -1,0 +1,369 @@
+{
+  "rfp_run_id": "RUN-20260930-114022-34fee0",
+  "created_at": "2026-09-30T11:41:22.705317",
+  "status": "COMPLETED",
+  "criteria_used": [
+    {
+      "criterion_id": 1,
+      "name": "Technical Capability",
+      "description": "Architecture, integrations, scalability, technical fit",
+      "weight": 30.0,
+      "max_score": 10.0,
+      "is_active": 1
+    },
+    {
+      "criterion_id": 2,
+      "name": "Implementation Plan",
+      "description": "Timeline, milestones, staffing, risk plan",
+      "weight": 20.0,
+      "max_score": 10.0,
+      "is_active": 1
+    },
+    {
+      "criterion_id": 3,
+      "name": "Commercial Value",
+      "description": "Pricing clarity, total cost, assumptions",
+      "weight": 20.0,
+      "max_score": 10.0,
+      "is_active": 1
+    },
+    {
+      "criterion_id": 4,
+      "name": "Security & Compliance",
+      "description": "Controls, certifications, privacy, auditability",
+      "weight": 20.0,
+      "max_score": 10.0,
+      "is_active": 1
+    },
+    {
+      "criterion_id": 5,
+      "name": "Support & Experience",
+      "description": "Support model, similar projects, references",
+      "weight": 10.0,
+      "max_score": 10.0,
+      "is_active": 1
+    }
+  ],
+  "benchmarks": {
+    "1": 6.0,
+    "2": 7.0,
+    "3": 8.0,
+    "4": 4.0,
+    "5": 7.0
+  },
+  "suppliers": [
+    {
+      "supplier_name": "BrightPath Tech",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "criterion_name": "Technical Capability",
+          "score": 6.0,
+          "max_score": 10.0,
+          "justification": "BrightPath offers a functional modern stack (React 17, Node.js 18, PostgreSQL on AWS), but the base architecture relies on Single-AZ RDS, basic CloudWatch monitoring without APM, and restricted read-only nightly bulk sync integrations. Advanced integrations like real-time Kafka streaming, SCIM 2.0, and event-driven messaging are explicitly excluded from the base scope.",
+          "evidence": "The BrightPath procurement platform is a cloud-hosted SaaS-style application built on our standard three-tier architecture... Database: PostgreSQL 14 (AWS RDS Single-AZ)... Real-time bidirectional integration, event-driven messaging, and sub-second data synchronisation are not included in the base proposal.",
+          "benchmark": 6.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weight": 30.0
+        },
+        {
+          "criterion_id": 2,
+          "criterion_name": "Implementation Plan",
+          "score": 7.0,
+          "max_score": 10.0,
+          "justification": "The proposal provides a well-defined 10-week, 6-phase schedule with clear sprint deliverables and a fully identified 6-person delivery team. However, risk management is minimal, explicitly deferring detailed milestone risk planning until after project initiation.",
+          "evidence": "BrightPath proposes an accelerated 10-week delivery from kick-off to go-live... Detailed milestone risk planning will be finalised after project initiation.",
+          "benchmark": 7.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 3,
+          "criterion_name": "Commercial Value",
+          "score": 8.0,
+          "max_score": 10.0,
+          "justification": "Pricing is clearly itemized across implementation, licensing, integration, support, and estimated pass-through AWS infrastructure. The payment schedule is tied to key project milestones, though multiple features (Multi-AZ, advanced connectors) will incur post-discovery additional costs.",
+          "evidence": "TOTAL YEAR 1 (excl. GST) 408,727 (~ SGD 360,000)... Payment: 50% on kick-off, 30% on UAT sign-off, 20% on go-live.",
+          "benchmark": 8.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 4,
+          "criterion_name": "Security & Compliance",
+          "score": 4.0,
+          "max_score": 10.0,
+          "justification": "Basic controls like AES-256 encryption at rest, TLS 1.2+, Auth0, and daily snapshots are covered. However, BrightPath lacks key certifications (ISO 27001, SOC 2, PCI-DSS), excludes MAS TRM and PDPA compliance from the base scope, omits penetration testing, and has no dedicated security lead on the delivery team.",
+          "evidence": "formal ISO 27001, SOC 2, or PCI-DSS certifications are not currently held. MAS TRM compliance assessment is out of scope for base proposal... Formal pen-test, MAS TRM compliance assessment, PDPA audit, SOC 2 \u2014 NOT INCLUDED in base scope",
+          "benchmark": 4.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 5,
+          "criterion_name": "Support & Experience",
+          "score": 7.0,
+          "max_score": 10.0,
+          "justification": "BrightPath demonstrates solid experience with over 80 delivered projects and provides two relevant enterprise case studies. However, the support model is restricted to business hours via Freshdesk ticketing with a 2-business-hour P1 response time and no 24/7 or weekend coverage in the base package.",
+          "evidence": "BrightPath has delivered 80+ software projects. Two enterprise references are provided... Support channel: email ticketing system (Freshdesk). No 24\u00d77 or weekend support in base scope.",
+          "benchmark": 7.0,
+          "gap": 0.0,
+          "relative_pct": 100.0,
+          "weight": 10.0
+        }
+      ],
+      "risks": [
+        "Security and compliance deficiencies: Absence of ISO 27001/SOC 2 certifications and exclusion of MAS TRM compliance, PDPA audits, and penetration testing from the initial scope.",
+        "Integration scope gap: Critical real-time integrations and advanced protocols are excluded, which may lead to scope creep and added costs post-discovery.",
+        "Operational support limitations: Absence of 24/7 support coverage and business-hours-only SLAs could lead to prolonged downtime during critical platform incidents."
+      ],
+      "overall_summary": "BrightPath Tech offers an attractive, fast-paced 10-week implementation plan with transparent pricing and solid SME experience. However, the response presents notable risks regarding enterprise security certifications, regulatory compliance (MAS TRM/PDPA), base-scope architecture constraints, and business-hours-only support.",
+      "warnings": [],
+      "submission_date": "2024-11-15",
+      "experience_rating": 5.0,
+      "absolute_score": 63.0,
+      "ppi": 100.0,
+      "final_rank": 1
+    },
+    {
+      "supplier_name": "Orbit Digital",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "criterion_name": "Technical Capability",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 6.0,
+          "gap": -6.0,
+          "relative_pct": 0.0,
+          "weight": 30.0
+        },
+        {
+          "criterion_id": 2,
+          "criterion_name": "Implementation Plan",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 7.0,
+          "gap": -7.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 3,
+          "criterion_name": "Commercial Value",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 8.0,
+          "gap": -8.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 4,
+          "criterion_name": "Security & Compliance",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 4.0,
+          "gap": -4.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 5,
+          "criterion_name": "Support & Experience",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 7.0,
+          "gap": -7.0,
+          "relative_pct": 0.0,
+          "weight": 10.0
+        }
+      ],
+      "risks": [],
+      "overall_summary": "Evaluation could not be completed.",
+      "warnings": [
+        "LLM error: 429 POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?%24alt=json%3Benum-encoding%3Dint: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.6-flash\nPlease retry in 37.726457369s."
+      ],
+      "submission_date": "2024-11-13",
+      "experience_rating": 8.0,
+      "absolute_score": 0.0,
+      "ppi": 0.0,
+      "final_rank": 2
+    },
+    {
+      "supplier_name": "NexaWorks",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "criterion_name": "Technical Capability",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 6.0,
+          "gap": -6.0,
+          "relative_pct": 0.0,
+          "weight": 30.0
+        },
+        {
+          "criterion_id": 2,
+          "criterion_name": "Implementation Plan",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 7.0,
+          "gap": -7.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 3,
+          "criterion_name": "Commercial Value",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 8.0,
+          "gap": -8.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 4,
+          "criterion_name": "Security & Compliance",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 4.0,
+          "gap": -4.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 5,
+          "criterion_name": "Support & Experience",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 7.0,
+          "gap": -7.0,
+          "relative_pct": 0.0,
+          "weight": 10.0
+        }
+      ],
+      "risks": [],
+      "overall_summary": "Evaluation could not be completed.",
+      "warnings": [
+        "LLM error: 429 POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?%24alt=json%3Benum-encoding%3Dint: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.6-flash\nPlease retry in 38.436074047s."
+      ],
+      "submission_date": "2024-11-14",
+      "experience_rating": 7.5,
+      "absolute_score": 0.0,
+      "ppi": 0.0,
+      "final_rank": 3
+    },
+    {
+      "supplier_name": "Apex Systems",
+      "criteria": [
+        {
+          "criterion_id": 1,
+          "criterion_name": "Technical Capability",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 6.0,
+          "gap": -6.0,
+          "relative_pct": 0.0,
+          "weight": 30.0
+        },
+        {
+          "criterion_id": 2,
+          "criterion_name": "Implementation Plan",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 7.0,
+          "gap": -7.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 3,
+          "criterion_name": "Commercial Value",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 8.0,
+          "gap": -8.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 4,
+          "criterion_name": "Security & Compliance",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 4.0,
+          "gap": -4.0,
+          "relative_pct": 0.0,
+          "weight": 20.0
+        },
+        {
+          "criterion_id": 5,
+          "criterion_name": "Support & Experience",
+          "score": 0,
+          "max_score": 10.0,
+          "justification": "LLM failed \u2014 score defaulted to 0.",
+          "evidence": "N/A",
+          "benchmark": 7.0,
+          "gap": -7.0,
+          "relative_pct": 0.0,
+          "weight": 10.0
+        }
+      ],
+      "risks": [],
+      "overall_summary": "Evaluation could not be completed.",
+      "warnings": [
+        "LLM error: JSON parse error: Invalid control character at: line 17 column 149 (char 961)"
+      ],
+      "submission_date": "2024-11-15",
+      "experience_rating": 9.0,
+      "absolute_score": 0.0,
+      "ppi": 0.0,
+      "final_rank": 4
+    }
+  ],
+  "warnings": [
+    "Apex Systems: LLM error: JSON parse error: Invalid control character at: line 17 column 149 (char 961)",
+    "NexaWorks: LLM error: 429 POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?%24alt=json%3Benum-encoding%3Dint: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.6-flash\nPlease retry in 38.436074047s.",
+    "Orbit Digital: LLM error: 429 POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?%24alt=json%3Benum-encoding%3Dint: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.6-flash\nPlease retry in 37.726457369s."
+  ],
+  "tie_break_rules": [
+    "1) Higher PPI first",
+    "2) Earlier submission date",
+    "3) Higher historical experience rating",
+    "4) Supplier name ascending (alphabetical)"
+  ]
+}
